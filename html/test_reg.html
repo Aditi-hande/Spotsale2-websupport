@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Testing RESTful API</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	</head>
+
+	<body>
+		<div id="id01" class="text">
+		</div>
+        
+		<div id="id02" class="text">
+		</div>
+
+        <ul id="dataList"></ul>
+        <div id="listItems">
+            <div class="catId"></div>
+            <div class="itemId"></div>
+            <div class="qty"></div>
+            <div class="cost"></div>
+        </div>
+
+        </div>
+
+		<script charset="UTF-8">
+            //document.getElementById("id01").innerHTML = "Hello PHP !! From JS.";
+
+			var xmlhttp = new XMLHttpRequest();
+			xmlhttp.onreadystatechange = function() {
+				if(this.readyState == 4 && this.status == 200) {
+					var result = JSON.parse(this.responseText);
+                    /*var arr = result.records;
+                    var listItemString = $('#listItems').html();
+                    arr.forEach(buildNewlist);
+
+                    function buildNewlist(item, index) {
+                        var listItem = $("<li>" + listItemString + "</li>");
+                        var listItemCatId = $('.catId', listItem);
+                        listItemCatId.html(item.cat_id);
+                        var listItemItemId = $('.itemId', listItem);
+                        listItemItemId.html(item.item_id);
+                        var listItemQty = $('.qty', listItem);
+                        listItemQty.html(item.qty);
+                        var listItemCost = $('.cost', listItem);
+                        listItemCost.html(item.cost);
+                        $('#dataList').append(listItem);
+                    }*/
+                    document.getElementById('id01').innerHTML = this.responseText;
+				}
+			};
+			xmlhttp.open("POST", "../api/user/login.php", true);
+            xmlhttp.setRequestHeader('Content-type', 'application/json');
+            var params = JSON.stringify({'username':'salil', 'password':'salil'});
+			xmlhttp.send(params);
+
+		</script>
+	</body>
+
+</html>

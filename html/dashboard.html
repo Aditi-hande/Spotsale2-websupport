@@ -1,0 +1,127 @@
+<!DOCTYPE html>   
+<html lang="en">   
+<head>   
+<meta charset="utf-8">   
+<title>Hello ADMIN!</title>   
+<link rel="stylesheet" href="../css/dashboard.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"> </script>
+<script type="text/javascript" src="../js/dashboard.js"> </script>
+</head>  
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<body style="margin:20px auto">  
+<div class="container">
+<div class="row header" style="text-align:center;color:green">
+<h3>ADMIN TABLE</h3>
+<div>
+<table cellspacing="5" cellpadding="5" border="0">
+        <tbody><tr>
+            <td>Minimum cost:</td>
+            <td><input type="text" id="min" name="min"></td>
+        </tr>
+        <tr>
+            <td>Maximum cost:</td>
+            <td><input type="text" id="max" name="max"></td>
+        </tr>
+    </tbody></table>
+<table id="myTable" class="table table-striped">  
+        <thead>  
+          <tr>  
+            <th>CAT_ID</th>  
+            <th>ITEM_ID</th>  
+            <th>ITEM_NAME</th>  
+            <th>QTY</th> 
+            <th>COST</th>
+            <th>SELLER</th>
+            <th>DESC</th> 
+          </tr>  
+        </thead>  
+        <tbody>  
+            <!--tr>
+                <td>1</td>
+                <td>1</td>
+                <td>Edinburgh</td>
+                <td>61</td>
+                <td>1000</td>
+                <td>xxx</td>
+                <td>xxx</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>1</td>
+                <td>Hindenberg</td>
+                <td>61</td>
+                <td>2000</td>
+                <td>xxx</td>
+                <td>xxx</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>1</td>
+                <td>Edinburgh</td>
+                <td>61</td>
+                <td>3000</td>
+                <td>xxx</td>
+                <td>xxx</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>1</td>
+                <td>Edinburgh</td>
+                <td>61</td>
+                <td>4000</td>
+                <td>xxx</td>
+                <td>xxx</td>
+            </tr-->
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>CAT_ID</th>  
+            	<th>ITEM_ID</th>  
+            	<th>ITEM_NAME</th>  
+            	<th>QTY</th> 
+            	<th>COST</th>
+            	<th>SELLER</th>
+            	<th>DESC</th>
+            </tr>
+        </tfoot>  
+      </table>  
+	  </div>
+</div>
+<div style="text-align:center; color:green">
+    <h3>INSERT AN ENTRY</h3>
+    <form name="insertForm" action="#">
+    <input type="text" id="cat_id" name="cat_id" placeholder="enter cat_id"/>
+    <input type="text" id="item_id" name="item_id" placeholder="enter item_id"/>
+    <input type="text" id="item_name" name="item_name" placeholder="enter item_name"/>
+    <input type="text" id="qty" name="qty" placeholder="enter qty"/>
+    <input type="text" id="cost" name="cost" placeholder="enter cost"/>
+    </form>
+    <button id="insertbtn">INSERT</button>
+
+</div>
+
+<div style="text-align:center; color:violet">
+    <h3>UPDATE AN ENTRY</h3>
+    <form name="updateForm" action="#">
+    <input type="text" id="ucat_id" name="cat_id" placeholder="enter cat_id"/>
+    <input type="text" id="uitem_id" name="item_id" placeholder="enter item_id"/>
+    <input type="text" id="new_item_name" name="item_name" placeholder="new item_name"/>
+    <input type="text" id="new_qty" name="qty" placeholder="new qty"/>
+    <input type="text" id="new_cost" name="cost" placeholder="new cost"/>
+    </form>
+    <button id="updatebtn">UPDATE</button>
+</div>
+
+<div style="text-align:center; color:red">
+    <h3>DELETE AN ENTRY</h3>
+    <form name="deleteForm" action="#">
+    <input type="text" id="dcat_id" name="cat_id" placeholder="enter cat_id to delete"/>
+    <input type="text" id="ditem_id" name="item_id" placeholder="enter item_id to delete"/>
+    </form>
+    <button id="deletebtn">DELETE</button>
+</div>
+</body>  
+</html>  
